@@ -1,0 +1,144 @@
+# depslib dependency file v1.0
+1491934381 source:c:\users\vu quoc phong\desktop\code\tetris\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<SDL.h>
+	"Board.hpp"
+	"Shape.hpp"
+	"Game.hpp"
+	"IO.hpp"
+
+1491934015 c:\users\vu quoc phong\desktop\code\tetris\shape.hpp
+	"IO.hpp"
+	"Board.hpp"
+	"constant.hpp"
+
+1491935043 source:c:\users\vu quoc phong\desktop\code\tetris\matrix.cpp
+	<iostream>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\shape.cpp
+	"matrix.hpp"
+	"Shape.hpp"
+	"Game.hpp"
+	"constant.hpp"
+	<cstdlib>
+	<ctime>
+
+1491636630 c:\users\vu quoc phong\desktop\code\tetris\matrix.hpp
+
+1491934381 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<SDL.h>
+	"Board.hpp"
+	"Shape.hpp"
+	"Game.hpp"
+	"IO.hpp"
+
+1491934015 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\shape.hpp
+	"IO.hpp"
+	"Board.hpp"
+	"constant.hpp"
+
+1491934911 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\matrix.cpp
+	<iostream>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\board.cpp
+	"IO.hpp"
+	"Board.hpp"
+	"Shape.hpp"
+	"constant.hpp"
+
+1491933936 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\board.hpp
+	"constant.hpp"
+	<SDL.h>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\shape.cpp
+	"matrix.hpp"
+	"Shape.hpp"
+	"Game.hpp"
+	"constant.hpp"
+	<cstdlib>
+	<ctime>
+
+1491636630 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\matrix.hpp
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\game.cpp
+	"Game.hpp"
+	"Shape.hpp"
+	"IO.hpp"
+	"Board.hpp"
+	"constant.hpp"
+	<SDL.h>
+
+1491927774 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\game.hpp
+	"Board.hpp"
+	"Shape.hpp"
+	"IO.hpp"
+
+1489848549 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\rendergame.hpp
+
+1489860875 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\rendergame.cpp
+	<iostream>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris.sublime-project\io.cpp
+	<iostream>
+	<SDL.h>
+	"IO.hpp"
+	"Shape.hpp"
+	"SDL_ttf.h"
+	"constant.hpp"
+	<string>
+
+1491934120 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\io.hpp
+	"Shape.hpp"
+	"Board.hpp"
+	<SDL.h>
+	<iostream>
+
+1491934846 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\constant.hpp
+	<iostream>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\board.cpp
+	"IO.hpp"
+	"Board.hpp"
+	"Shape.hpp"
+	"constant.hpp"
+
+1491934120 c:\users\vu quoc phong\desktop\code\tetris\io.hpp
+	"Shape.hpp"
+	"Board.hpp"
+	<SDL.h>
+	<iostream>
+
+1491933936 c:\users\vu quoc phong\desktop\code\tetris\board.hpp
+	"constant.hpp"
+	<SDL.h>
+
+1491934846 c:\users\vu quoc phong\desktop\code\tetris\constant.hpp
+	<iostream>
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\game.cpp
+	"Game.hpp"
+	"Shape.hpp"
+	"IO.hpp"
+	"Board.hpp"
+	"constant.hpp"
+	<SDL.h>
+
+1491927774 c:\users\vu quoc phong\desktop\code\tetris\game.hpp
+	"Board.hpp"
+	"Shape.hpp"
+	"IO.hpp"
+
+1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\io.cpp
+	<iostream>
+	<SDL.h>
+	"IO.hpp"
+	"Shape.hpp"
+	"SDL_ttf.h"
+	"constant.hpp"
+	<string>
+
