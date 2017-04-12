@@ -82,7 +82,7 @@ int Game::getPoint() {
     return _point;
 }
 
-bool Game::isOver (int *block, int min_row) {
+bool Game::isOver (const int *block,const int min_row) {
     for (int i = 1; i <= BLOCK_SIZE; ++i) {
         for (int j = 1; j <= BLOCK_SIZE; ++j) {
             if (*(block+i*(BLOCK_SIZE+1)+j) == FILLED && i+min_row-1 <= 0) return true;

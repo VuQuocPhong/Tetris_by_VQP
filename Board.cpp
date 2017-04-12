@@ -17,7 +17,7 @@ int* Board::getCurBoard() {
 }
 
 
-void Board::handleFullRow (int min_row, int& plus_point) {
+void Board::handleFullRow (const int min_row, int& plus_point) {
     bool is_full;
     int i = min_row;
     while (i <= BOARD_HEIGHT && i < min_row+BLOCK_SIZE) {
@@ -34,7 +34,7 @@ void Board::handleFullRow (int min_row, int& plus_point) {
     }
 }
 
-void Board::freeRow (int row) {
+void Board::freeRow (const int row) {
     for (int i = row; i >= 1; --i)   {
         for (int j = 1; j <= BOARD_WIDTH; ++j) {
             if (i > 1) {
@@ -46,7 +46,7 @@ void Board::freeRow (int row) {
     }
 }
 
-void Board::updateBoard (int *block, int min_row, int min_col) {
+void Board::updateBoard (const int *block, const int min_row, int min_col) {
     for (int i = 1; i <= BLOCK_SIZE; ++i) {
         for (int j = 1; j <= BLOCK_SIZE; ++j) {
             if (*(block+i*(BLOCK_SIZE+1)+j) == FILLED) {
