@@ -14,6 +14,7 @@
  - Left and Right arrow key to move Block left and right respectively.
  - Up arrow to rotate current block.
  - Down arrow to skip delay while block's falling.
+ - Press ESC to quit Tetris.
 
 # References
  - Linear Algebra square-matrix rotation Algorithm. 
