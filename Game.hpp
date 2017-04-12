@@ -12,13 +12,13 @@ private:
 public:
     Game();
 
-    void showGreetingMes(IO& mainIO);
-    void mainLoop(IO& mainIO);
-    void showEndGameMes(IO& mainIO);
+    void showGreetingMes (IO& mainIO);
+    void mainLoop (IO& mainIO);
+    void showEndGameMes (IO& mainIO);
 
-    void addPoint(int plus_point);
+    void addPoint (int plus_point);
     int getPoint();
-    bool isOver(int *block, int min_row);
+    bool isOver (const int *block, const int min_row);
 };
 
 #endif

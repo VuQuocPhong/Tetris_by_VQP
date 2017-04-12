@@ -78,7 +78,7 @@ int* Shape::getCurShape() {
     return (int*) _twoDimension;
 }
 
-bool Shape::isProperMove(int *board, int cur_min_row, int cur_min_col) {
+bool Shape::isProperMove(const int *board, const int cur_min_row,const int cur_min_col) {
     int *block = (int*)_twoDimension;
     for (int i = 1; i <= BLOCK_SIZE; ++i) {
         for (int j = 1; j <= BLOCK_SIZE; ++j) {

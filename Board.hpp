@@ -13,7 +13,7 @@ private:
 public:
     Board();
     int *getCurBoard();
-    void handleFullRow (int min_row, int& plus_point);
-    void updateBoard (int *block,int min_row,int min_col);
+    void handleFullRow (const int min_row, int& plus_point);
+    void updateBoard (const int *block,const int min_row,const int min_col);
 };
 #endif

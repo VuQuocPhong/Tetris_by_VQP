@@ -11,7 +11,8 @@ Game::Game() : _point(0) {};
 void shapeHandle (Shape& curShape,IO& mainIO, int* board, bool& is_delay, bool& is_quit, int& plus_point);
 
 void Game::showGreetingMes(IO& mainIO) {
-    mainIO.displayText("Game Start!",20,0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6);
+    SDL_Rect greetingRect = {0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6};
+    mainIO.displayText("Game Start!",NOTIF_FONT_SIZE,greetingRect,PURE_WHITE);
     mainIO.updateRenderer();
     SDL_Delay(NOTIF_DELAY_TIME);
 }
@@ -69,8 +70,10 @@ void shapeHandle (Shape& curShape,IO& mainIO, int* board, bool& is_delay, bool& 
 void Game::showEndGameMes (IO& mainIO) {
     mainIO.displayPoint(getPoint());
     SDL_Delay(NOTIF_DELAY_TIME);
+
+    SDL_Rect endGameMesRect = {0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6};
     mainIO.clearRender();
-    mainIO.displayText("Game Over!",20,0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6);
+    mainIO.displayText("Game Over!",NOTIF_FONT_SIZE,endGameMesRect,PURE_BLACK);
     SDL_Delay(NOTIF_DELAY_TIME);
 }
 
@@ -82,7 +85,7 @@ int Game::getPoint() {
     return _point;
 }
 
-bool Game::isOver (int *block, int min_row) {
+bool Game::isOver (const int *block,const int min_row) {
     for (int i = 1; i <= BLOCK_SIZE; ++i) {
         for (int j = 1; j <= BLOCK_SIZE; ++j) {
             if (*(block+i*(BLOCK_SIZE+1)+j) == FILLED && i+min_row-1 <= 0) return true;
