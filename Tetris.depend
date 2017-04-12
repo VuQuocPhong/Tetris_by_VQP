@@ -1,15 +1,13 @@
 # depslib dependency file v1.0
-1491934381 source:c:\users\vu quoc phong\desktop\code\tetris\main.cpp
+1492018376 source:c:\users\vu quoc phong\desktop\code\tetris\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
 	<SDL.h>
-	"Board.hpp"
-	"Shape.hpp"
 	"Game.hpp"
 	"IO.hpp"
 
-1491934015 c:\users\vu quoc phong\desktop\code\tetris\shape.hpp
+1492017714 c:\users\vu quoc phong\desktop\code\tetris\shape.hpp
 	"IO.hpp"
 	"Board.hpp"
 	"constant.hpp"
@@ -17,7 +15,7 @@
 1491935043 source:c:\users\vu quoc phong\desktop\code\tetris\matrix.cpp
 	<iostream>
 
-1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\shape.cpp
+1492017714 source:c:\users\vu quoc phong\desktop\code\tetris\shape.cpp
 	"matrix.hpp"
 	"Shape.hpp"
 	"Game.hpp"
@@ -101,26 +99,26 @@
 1491934846 c:\users\vu quoc phong\desktop\code\tetris.sublime-project\constant.hpp
 	<iostream>
 
-1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\board.cpp
+1492013041 source:c:\users\vu quoc phong\desktop\code\tetris\board.cpp
 	"IO.hpp"
 	"Board.hpp"
 	"Shape.hpp"
 	"constant.hpp"
 
-1491934120 c:\users\vu quoc phong\desktop\code\tetris\io.hpp
+1492018340 c:\users\vu quoc phong\desktop\code\tetris\io.hpp
 	"Shape.hpp"
 	"Board.hpp"
 	<SDL.h>
 	<iostream>
 
-1491933936 c:\users\vu quoc phong\desktop\code\tetris\board.hpp
+1492013040 c:\users\vu quoc phong\desktop\code\tetris\board.hpp
 	"constant.hpp"
 	<SDL.h>
 
-1491934846 c:\users\vu quoc phong\desktop\code\tetris\constant.hpp
+1492016256 c:\users\vu quoc phong\desktop\code\tetris\constant.hpp
 	<iostream>
 
-1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\game.cpp
+1492018350 source:c:\users\vu quoc phong\desktop\code\tetris\game.cpp
 	"Game.hpp"
 	"Shape.hpp"
 	"IO.hpp"
@@ -128,12 +126,12 @@
 	"constant.hpp"
 	<SDL.h>
 
-1491927774 c:\users\vu quoc phong\desktop\code\tetris\game.hpp
+1492017860 c:\users\vu quoc phong\desktop\code\tetris\game.hpp
 	"Board.hpp"
 	"Shape.hpp"
 	"IO.hpp"
 
-1491934846 source:c:\users\vu quoc phong\desktop\code\tetris\io.cpp
+1492018340 source:c:\users\vu quoc phong\desktop\code\tetris\io.cpp
 	<iostream>
 	<SDL.h>
 	"IO.hpp"
