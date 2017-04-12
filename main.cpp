@@ -3,8 +3,7 @@
 #include <cstdlib>
 #include <SDL.h>
 #undef main
-#include "Board.hpp"
-#include "Shape.hpp"
+
 #include "Game.hpp"
 #include "IO.hpp"
 

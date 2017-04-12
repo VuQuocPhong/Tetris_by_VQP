@@ -11,13 +11,14 @@ class IO {
     SDL_Renderer* _gRenderer;
 public:
     IO();
-    void drawCurBoard (int* board, int* block, int min_row, int min_col);
-    void handleInput (int* board, Shape &mShape, bool &delay, bool &quit_game);
-    void displayText(const std::string& Text, int font_size, int x, int y, int w, int h);
-    void displayPoint (int point);
+    void drawCurBoard (const int* board, const int* block, const int min_row, const int min_col);
+    void handleInput (const int* board, Shape &mShape, bool &delay, bool &quit_game);
+    void displayText(const std::string& Text, const int font_size, const SDL_Rect msRect, const uint8_t color);
+    void displayPoint (const int point);
     void updateRenderer();
     void clearRender();
     ~IO();
 };
+void DrawRectangle (SDL_Renderer* _gRenderer, const SDL_Rect fillRect, const int color);
 
 #endif

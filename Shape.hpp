@@ -34,7 +34,7 @@ public:
     int getMinCol();
 
     void rotateShape();
-    bool isProperMove(int *board, int y, int x);
+    bool isProperMove(const int *board, const int cur_min_row, const int cur_min_col);
     void falling();
     void moveLeft();
     void moveRight();

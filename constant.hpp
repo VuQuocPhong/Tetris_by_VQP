@@ -20,6 +20,9 @@ const int NOTIF_DELAY_TIME = 2000;
 
 const int PLUS_POINT = 10;
 
+const uint8_t PURE_BLACK = 0;
+const uint8_t PURE_WHITE = 255;
+const int NOTIF_FONT_SIZE = 20;
 const std::string FONT_PATH = "arial.ttf";
 
 #endif
