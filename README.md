@@ -8,7 +8,7 @@
  - .hpp and .cpp for detail implementation.
 
 # Test
- - This project can be tested by using Code::Block.
+ - This project can be tested by using Code::Block added these extension library SDL2, SDL_tff.
  
 # Instruction
  - Left and Right arrow key to move Block left and right respectively.
