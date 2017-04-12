@@ -7,7 +7,7 @@
  - Open .cbp  by Code::Block to have a general viewpoint.
  - .hpp and .cpp for detail implementation.
 
-# Test.
+# Test
  - This project can be tested by using Code::Block.
  
 # Instruction
