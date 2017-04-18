@@ -17,7 +17,7 @@ int* Board::getCurBoard() {
 }
 
 
-void Board::handleFullRow (const int min_row, int& plus_point) {
+void Board::handleFullRow (IO& mainIO, Shape curShape, const int min_row, int& plus_point) {
     bool is_full;
     int i = min_row;
     while (i <= BOARD_HEIGHT && i < min_row+BLOCK_SIZE) {
@@ -27,14 +27,15 @@ void Board::handleFullRow (const int min_row, int& plus_point) {
         }
         if(is_full){
             plus_point = PLUS_POINT;
-            freeRow(i);
+            freeRow(i,mainIO,curShape);
         }
         else
             i++;
     }
 }
 
-void Board::freeRow (const int row) {
+void Board::freeRow (const int row, IO& mainIO, Shape curShape) {
+    mainIO.freeRowEffect((int*)_board,curShape,row);
     for (int i = row; i >= 1; --i)   {
         for (int j = 1; j <= BOARD_WIDTH; ++j) {
             if (i > 1) {

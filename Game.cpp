@@ -13,8 +13,6 @@ void shapeHandle (Shape& curShape,IO& mainIO, int* board, bool& is_delay, bool& 
 void Game::showGreetingMes(IO& mainIO) {
     SDL_Rect greetingRect = {0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6};
     mainIO.displayText("Game Start!",NOTIF_FONT_SIZE,greetingRect,PURE_WHITE);
-    mainIO.updateRenderer();
-    SDL_Delay(NOTIF_DELAY_TIME);
 }
 
 void Game::mainLoop (IO& mainIO) {
@@ -33,48 +31,53 @@ void Game::mainLoop (IO& mainIO) {
         shape = curShape.getCurShape();
         min_row = curShape.getMinRow();
         min_col = curShape.getMinCol();
+
         mBoard.updateBoard(shape,min_row,min_col);
-        mainIO.updateRenderer();
-        mBoard.handleFullRow(min_row,plus_point);
-        if (plus_point != 0) addPoint( plus_point );
-        mBoard.updateBoard(shape,min_row,min_col);
-        mainIO.updateRenderer();
-        if (is_quit){
+        mainIO.updateScreen();
+        mBoard.handleFullRow(mainIO,curShape,min_row,plus_point);
+        if (plus_point != 0) {
+            addPoint( plus_point );
+            mainIO.displayPoint(getPoint());
+        } else {
+            mBoard.updateBoard(shape,min_row,min_col);
+            mainIO.updateScreen();
+        }
+        if (is_quit) {
             break;
         }
     } while (!isOver(shape,min_row));
-    mainIO.drawCurBoard(board,shape,min_row,min_col);
+
+    bool inEffect = false;
+    mainIO.drawCurBoard(board,shape,min_row,min_col, inEffect);
 }
 
 
 void shapeHandle (Shape& curShape,IO& mainIO, int* board, bool& is_delay, bool& is_quit, int& plus_point) {
-        is_delay = true;
-        int delay_counter = 0;
-        int* shape = curShape.getCurShape();  //get the two-dimen of block arr.
-        int min_row = curShape.getMinRow();
-        int min_col = curShape.getMinCol();
-        while (curShape.isProperMove(board,min_row+1,min_col) && !is_quit) {
-            mainIO.clearRender();
-            mainIO.handleInput(board,curShape,is_delay,is_quit);
-            mainIO.drawCurBoard(board,shape,min_row,min_col);
+    is_delay = true;
+    int delay_counter = 0;
+    int* shape = curShape.getCurShape();  //get the two-dimen of block arr.
+    int min_row = curShape.getMinRow();
+    int min_col = curShape.getMinCol();
+    while (curShape.isProperMove(board,min_row+1,min_col) && !is_quit) {
+        mainIO.clearRender();
+        mainIO.handleInput(board,curShape,is_delay,is_quit);
+        bool inEffect = false;
+        mainIO.drawCurBoard(board,shape,min_row,min_col,inEffect);
 
-            if(delay_counter % GAME_DELAY_BEAT == 0) curShape.falling();
-            min_row = curShape.getMinRow();
-            min_col = curShape.getMinCol();
-            delay_counter++;
-            is_delay ? (delay_counter++) : (delay_counter = GAME_DELAY_BEAT); // delay.
-        }
+        if(delay_counter % GAME_DELAY_BEAT == 0) curShape.falling();
+        min_row = curShape.getMinRow();
+        min_col = curShape.getMinCol();
+        delay_counter++;
+        is_delay ? (delay_counter++) : (delay_counter = GAME_DELAY_BEAT); // delay.
+    }
 }
 
 
 void Game::showEndGameMes (IO& mainIO) {
     mainIO.displayPoint(getPoint());
-    SDL_Delay(NOTIF_DELAY_TIME);
-
     SDL_Rect endGameMesRect = {0,0,MAIN_SCREEN_WIDTH,MAIN_SCREEN_HEIGHT/6};
     mainIO.clearRender();
     mainIO.displayText("Game Over!",NOTIF_FONT_SIZE,endGameMesRect,PURE_BLACK);
-    SDL_Delay(NOTIF_DELAY_TIME);
 }
 
 void Game::addPoint (int plus_point) {

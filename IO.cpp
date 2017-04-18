@@ -71,6 +71,7 @@ void createTexture (SDL_Renderer* gRenderer, SDL_Surface* gSurface, const SDL_Re
         SDL_FreeSurface(gSurface);
         SDL_DestroyTexture(gTexture);
         SDL_RenderPresent(gRenderer);
+        SDL_Delay(NOTIF_DELAY_TIME);
     }
     if(!success_init) std::cout << SDL_GetError();
 }
@@ -81,7 +82,7 @@ void DrawRectangle (SDL_Renderer* _gRenderer, const SDL_Rect fillRect, const int
     SDL_RenderFillRect(_gRenderer, &fillRect);
 }
 
-void IO::drawCurBoard (const int* board, const int* block, const int min_row, const int min_col) {
+void IO::drawCurBoard (const int* board, const int* block, const int min_row, const int min_col, const bool inEffect) {
     for (int i = 1; i <= BOARD_HEIGHT; ++i) {
         for (int j = 1; j <= BOARD_WIDTH; ++j) {
             int block_row = i-min_row+1;
@@ -89,7 +90,8 @@ void IO::drawCurBoard (const int* board, const int* block, const int min_row, co
             int x = (j-1)*RECTANGLE_SIZE;
             int y = (i-1)*RECTANGLE_SIZE;
             SDL_Rect rectangleRect;
-            if (block_row >= 1 && block_row <= 5 && block_col <= 5 && block_col >= 1
+            if ((!inEffect)
+                    && block_row >= 1 && block_row <= 5 && block_col <= 5 && block_col >= 1
                     && *(block+block_row*(BLOCK_SIZE+1)+block_col) == FILLED) {
                     rectangleRect = {x,y,RECTANGLE_SIZE,RECTANGLE_SIZE};
                     DrawRectangle(_gRenderer,rectangleRect,PURE_BLACK);
@@ -121,6 +123,7 @@ void IO::displayText (const std::string& Text, const int font_size, const SDL_Re
             }
         }
     }
+
     if (!success_init) std::cout << SDL_GetError();
 }
 
@@ -130,11 +133,23 @@ void IO::displayPoint(const int point) {
     displayText("Point: " + point_str,NOTIF_FONT_SIZE,pointRect,PURE_BLACK);
 }
 
+void IO::freeRowEffect (int* board, Shape curShape, const int row) {
+    int min_col = curShape.getMinCol();
+    int min_row = curShape.getMinRow();
+    int* block = curShape.getCurShape();
+    bool inEffect = true;
+    for (int i = BOARD_WIDTH/2; i > 0; --i) {
+        *(board+row*(BOARD_WIDTH+1)+i) = *(board+row*(BOARD_WIDTH+1)+BOARD_WIDTH-i) = UNFILLED;
+        drawCurBoard(board,block,min_row,min_col,inEffect);
+        SDL_Delay(FREE_ROW_DELAY_TIME);
+    }
+}
+
 void IO::clearRender() {
     SDL_RenderClear(_gRenderer);
 }
 
-void IO::updateRenderer() {
+void IO::updateScreen() {
     SDL_RenderPresent(_gRenderer);
 }
 
