@@ -11,7 +11,7 @@ class IO {
     SDL_Renderer* _gRenderer;
 public:
     IO();
-    void drawCurBoard (const int* board, const int* block, const int min_row, const int min_col, const bool inEffect);
+    void drawCurBoard (const int* board, const int* block, const int min_row, const int min_col, bool inEffect = false);
     void handleInput (const int* board, Shape &mShape, bool &delay, bool &quit_game);
     void displayText(const std::string& Text, const int font_size, const SDL_Rect msRect, const uint8_t color);
     void displayPoint (const int point);

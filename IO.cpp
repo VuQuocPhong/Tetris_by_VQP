@@ -82,7 +82,7 @@ void DrawRectangle (SDL_Renderer* _gRenderer, const SDL_Rect fillRect, const int
     SDL_RenderFillRect(_gRenderer, &fillRect);
 }
 
-void IO::drawCurBoard (const int* board, const int* block, const int min_row, const int min_col, const bool inEffect) {
+void IO::drawCurBoard (const int* board, const int* block, const int min_row, const int min_col,bool inEffect) {
     for (int i = 1; i <= BOARD_HEIGHT; ++i) {
         for (int j = 1; j <= BOARD_WIDTH; ++j) {
             int block_row = i-min_row+1;

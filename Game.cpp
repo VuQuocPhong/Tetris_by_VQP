@@ -47,8 +47,7 @@ void Game::mainLoop (IO& mainIO) {
         }
     } while (!isOver(shape,min_row));
 
-    bool inEffect = false;
-    mainIO.drawCurBoard(board,shape,min_row,min_col, inEffect);
+    mainIO.drawCurBoard(board,shape,min_row,min_col);
 }
 
 
@@ -61,8 +60,7 @@ void shapeHandle (Shape& curShape,IO& mainIO, int* board, bool& is_delay, bool& 
     while (curShape.isProperMove(board,min_row+1,min_col) && !is_quit) {
         mainIO.clearRender();
         mainIO.handleInput(board,curShape,is_delay,is_quit);
-        bool inEffect = false;
-        mainIO.drawCurBoard(board,shape,min_row,min_col,inEffect);
+        mainIO.drawCurBoard(board,shape,min_row,min_col);
 
         if(delay_counter % GAME_DELAY_BEAT == 0) curShape.falling();
         min_row = curShape.getMinRow();
