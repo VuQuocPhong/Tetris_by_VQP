@@ -17,7 +17,7 @@ const int BLOCK_SIZE = 5;
 
 const int GAME_DELAY_BEAT = 1000;
 const int NOTIF_DELAY_TIME = 2000;
-const int FREE_ROW_DELAY_TIME = 250;
+const int FREE_ROW_DELAY_TIME = 100;
 
 const int PLUS_POINT = 10;
 
